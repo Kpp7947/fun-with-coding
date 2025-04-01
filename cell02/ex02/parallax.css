@@ -1,0 +1,36 @@
+body {
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.parallax {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.parallax-1 {
+    background-image: url('https://i.pinimg.com/736x/6b/bc/ab/6bbcaba92a2f630eab5e44365e46a2d7.jpg');
+}
+
+.parallax-2 {
+    background-image: url('https://i.pinimg.com/736x/b6/61/dc/b661dcdf0860aba56f38b6e7923fc8c6.jpg');
+}
+
+.msg {
+    width: 40%;
+}
+
+.content{
+    padding: 100px;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
