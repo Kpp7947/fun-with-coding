@@ -1,0 +1,12 @@
+Username: 66070287
+Password: QCM611YIEI88L
+Server Address: 10.0.15.21
+
+Username : s66070287
+Password : ONMDKEEA
+Database Name : d66070287
+
+select s.song_name, a.artist_name, s.song_release_date, s.song_type
+from songs s
+join artists a
+on s.artist = a.artist_id
