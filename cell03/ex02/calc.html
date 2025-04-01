@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-size: 18px;
+        }
+
+        .container {
+            display: grid;
+            justify-content: center;
+        }
+
+        button {
+            padding: 5px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input, select {
+            border: 1px solid rgb(171, 170, 170);
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="cal">
+            <input id="num1" type="text" placeholder="Number1">
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input id="num2" type="text" placeholder="Number2">
+            <button onclick="calculate()">Try me!</button>
+        </div>
+    </div>
+
+    <script>
+        function useme() {
+                console.log("Please, use me...");
+                alert("Please, use me...");
+            }
+        setInterval(useme, 30000);
+
+        function calculate() {
+            const num1 = parseInt(document.getElementById('num1').value);
+            const num2 = parseInt(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+            let result = 0;
+            
+            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
+                alert('Error :(');
+                return;
+            }
+
+            if ((operator == '/' || operator == '%') && num2 == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                case "%":
+                    result = num1 % num2;
+                    break;
+            }
+
+            alert(`result: ${result}`);
+            console.log(`result: ${result}`);
+
+        }
+    </script>
+</body>
+
+</html>

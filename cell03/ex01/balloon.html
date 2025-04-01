@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+
+    <style>
+        body {
+            justify-items: center;
+            align-content: center;
+            height: 100vh;
+        }
+        #circle {
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle" onclick="grow()" onmouseleave="shrinks()" style="width: 200px; height: 200px;"></div>
+
+    <script>
+        const color = ['red', 'green', 'blue'];
+        let index = 0;
+        function grow() {
+            const circle = document.getElementById("circle");
+            const current_size = parseInt(circle.style.width);
+
+            if (current_size <= 420) {
+                circle.style.width = `${current_size+10}px`;
+                circle.style.height = `${current_size+10}px`;
+                index = (index+1)%color.length;
+                circle.style.backgroundColor = `${color[index]}`
+            }else {
+                circle.style.width = `200px`;
+                circle.style.height = `200px`;
+                index = 0;
+                circle.style.backgroundColor = `${color[index]}`
+            }
+        }
+
+        function shrinks() {
+            const circle = document.getElementById("circle");
+            const current_size = parseInt(circle.style.width);
+
+            if (current_size > 200) {
+                circle.style.width = `${current_size-5}px`;
+                circle.style.height = `${current_size-5}px`;
+                index = (index-1+color.length)%color.length;
+                circle.style.backgroundColor = `${color[index]}`
+            }
+        }
+    </script>
+</body>
+</html>
